@@ -1,0 +1,27 @@
+✅ TANDOOR ЛЕНДИНГ ГОТОВ К ПУБЛИКАЦИИ!
+
+📦 Что уже сделано:
+- ✅ Git репозиторий инициализирован
+- ✅ Все файлы закоммичены (5 коммитов)
+- ✅ Remote настроен: https://github.com/karenavedikyan/tandoor-landing.git
+- ✅ Ветка: main
+
+🚀 Для публикации выполните:
+
+1. Создайте репозиторий на GitHub:
+   https://github.com/new
+   Имя: tandoor-landing
+   Public: ✓
+
+2. Затем выполните:
+   cd /Users/karenavedikyan/testcursor/tandoor
+   git push -u origin main
+
+Или используйте интерактивный скрипт:
+   ./create_and_publish.sh
+
+📄 После публикации включите GitHub Pages:
+   Settings → Pages → Deploy from branch: main
+
+🌐 Сайт будет доступен:
+   https://karenavedikyan.github.io/tandoor-landing/
