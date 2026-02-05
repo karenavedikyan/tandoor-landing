@@ -70,6 +70,27 @@ body {
     font-size: 28px;
     color: var(--color-green-bright);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+    transition: filter 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(100deg) brightness(1.2);
 }
 
 .logo-text {
@@ -710,6 +731,21 @@ body {
     margin-bottom: 15px;
     letter-spacing: 2px;
     color: var(--color-green-bright);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+}
+
+.footer-logo-text {
+    letter-spacing: 2px;
 }
 
 .footer-title {
