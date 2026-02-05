@@ -832,6 +832,16 @@ body {
         display: flex;
     }
 
+    .logo-img {
+        height: 40px;
+        max-width: 150px;
+    }
+
+    .footer-logo-img {
+        height: 40px;
+        max-width: 150px;
+    }
+
     .hero-title {
         font-size: 48px;
     }
