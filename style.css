@@ -6,11 +6,24 @@
 }
 
 :root {
+    /* Фирменная черно-зеленая палитра TANDOOR */
     --color-black: #000000;
+    --color-black-dark: #0a0a0a;
     --color-white: #FFFFFF;
-    --color-gray: #333333;
-    --color-green: #00A651;
-    --color-light-gray: #F8F9FA;
+    --color-gray: #2d2d2d;
+    --color-gray-light: #4a4a4a;
+    --color-gray-bg: #f5f5f5;
+    
+    /* Зеленые оттенки */
+    --color-green-dark: #004d26;
+    --color-green: #006633;
+    --color-green-medium: #008a43;
+    --color-green-bright: #00a651;
+    --color-green-light: #00d084;
+    --color-green-accent: #00ff99;
+    
+    /* Дополнительные цвета */
+    --color-light-gray: #f8f9fa;
 }
 
 html {
@@ -38,8 +51,8 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--color-white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-black);
+    box-shadow: 0 2px 20px rgba(0, 102, 51, 0.3);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -55,7 +68,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 28px;
-    color: var(--color-black);
+    color: var(--color-green-bright);
     text-decoration: none;
 }
 
@@ -69,7 +82,7 @@ body {
 }
 
 .nav-link {
-    color: var(--color-gray);
+    color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -78,7 +91,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--color-green);
+    color: var(--color-green-light);
 }
 
 .nav-link::after {
@@ -88,7 +101,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-green);
+    background-color: var(--color-green-bright);
     transition: width 0.3s ease;
 }
 
@@ -109,7 +122,7 @@ body {
 .mobile-menu-toggle span {
     width: 25px;
     height: 3px;
-    background-color: var(--color-black);
+    background-color: var(--color-green-bright);
     transition: all 0.3s ease;
 }
 
@@ -133,10 +146,11 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--color-white);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        background-color: var(--color-black);
+        box-shadow: 0 5px 20px rgba(0, 166, 81, 0.3);
         padding: 20px;
         gap: 15px;
+        border-top: 2px solid var(--color-green);
     }
 }
 
@@ -146,14 +160,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-black) 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-green-dark) 50%, var(--color-black-dark) 100%);
     color: var(--color-white);
     text-align: center;
     padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 166, 81, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .hero-content {
     max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-title {
@@ -163,12 +192,18 @@ body {
     letter-spacing: 5px;
     margin-bottom: 20px;
     text-transform: uppercase;
+    color: var(--color-white);
+    text-shadow: 0 0 30px rgba(0, 166, 81, 0.5);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-subtitle {
     font-size: 24px;
     margin-bottom: 15px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-green-light);
+    position: relative;
+    z-index: 1;
 }
 
 .hero-description {
@@ -195,21 +230,26 @@ body {
 .btn-primary {
     background-color: var(--color-green);
     color: var(--color-white);
+    border: 2px solid var(--color-green-bright);
 }
 
 .btn-primary:hover {
-    background-color: #008a43;
+    background-color: var(--color-green-bright);
+    border-color: var(--color-green-light);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 166, 81, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 166, 81, 0.5);
 }
 
 .btn-white {
     background-color: var(--color-white);
     color: var(--color-green);
+    border: 2px solid var(--color-white);
 }
 
 .btn-white:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--color-green-light);
+    color: var(--color-black);
+    border-color: var(--color-green-light);
 }
 
 /* ===== SECTION TITLES ===== */
@@ -226,12 +266,14 @@ body {
 
 .section-title-white {
     color: var(--color-white);
+    position: relative;
+    z-index: 1;
 }
 
 /* ===== ABOUT SECTION ===== */
 .about {
     padding: 100px 0;
-    background-color: var(--color-light-gray);
+    background: linear-gradient(to bottom, var(--color-gray-bg) 0%, var(--color-white) 100%);
 }
 
 .about-content {
@@ -263,6 +305,7 @@ body {
     font-size: 48px;
     color: var(--color-green);
     margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 102, 51, 0.3);
 }
 
 .stat-label {
@@ -286,13 +329,15 @@ body {
     background-color: var(--color-white);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 102, 51, 0.1);
+    border: 1px solid rgba(0, 102, 51, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .catalog-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 166, 81, 0.3);
+    border-color: var(--color-green-bright);
 }
 
 .catalog-image {
@@ -337,7 +382,7 @@ body {
 }
 
 .catalog-link:hover {
-    color: #008a43;
+    color: var(--color-green-bright);
 }
 
 /* ===== ADVANTAGES SECTION ===== */
@@ -360,7 +405,7 @@ body {
 .advantage-icon {
     width: 60px;
     height: 60px;
-    background-color: var(--color-green);
+    background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-bright) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -369,6 +414,7 @@ body {
     font-size: 30px;
     color: var(--color-white);
     font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 166, 81, 0.4);
 }
 
 .advantage-title {
@@ -457,20 +503,22 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--color-green);
+    background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-bright) 100%);
     color: var(--color-white);
-    border: none;
+    border: 2px solid var(--color-green-bright);
     font-size: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 166, 81, 0.3);
 }
 
 .reviews-btn:hover {
-    background-color: #008a43;
+    background: linear-gradient(135deg, var(--color-green-bright) 0%, var(--color-green-light) 100%);
     transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(0, 166, 81, 0.5);
 }
 
 .reviews-dots {
@@ -491,16 +539,30 @@ body {
 }
 
 .reviews-dot.active {
-    background-color: var(--color-green);
+    background: linear-gradient(90deg, var(--color-green) 0%, var(--color-green-bright) 100%);
     width: 30px;
     border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 166, 81, 0.4);
 }
 
 /* ===== CONTACTS SECTION ===== */
 .contacts {
     padding: 100px 0;
-    background-color: var(--color-green);
+    background: linear-gradient(135deg, var(--color-green-dark) 0%, var(--color-green) 50%, var(--color-green-medium) 100%);
     color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .contacts-content {
@@ -509,6 +571,8 @@ body {
     gap: 60px;
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .contacts-info {
@@ -611,8 +675,9 @@ body {
 /* ===== FOOTER ===== */
 .footer {
     padding: 60px 0 30px;
-    background-color: var(--color-black);
+    background: linear-gradient(180deg, var(--color-black) 0%, var(--color-green-dark) 100%);
     color: var(--color-white);
+    border-top: 2px solid var(--color-green);
 }
 
 .footer-content {
@@ -628,6 +693,7 @@ body {
     font-size: 28px;
     margin-bottom: 15px;
     letter-spacing: 2px;
+    color: var(--color-green-bright);
 }
 
 .footer-title {
@@ -658,7 +724,7 @@ body {
 }
 
 .footer-link:hover {
-    color: var(--color-green);
+    color: var(--color-green-light);
 }
 
 .footer-social {
@@ -675,7 +741,7 @@ body {
 }
 
 .social-link:hover {
-    color: var(--color-green);
+    color: var(--color-green-light);
 }
 
 .footer-bottom {
